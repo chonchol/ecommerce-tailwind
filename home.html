@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#454545',
+                        secondary: '#625837',
+                        btntext: '#f7f4ed',
+                        bgcolor: '#F5F3E7',
+                        hcolor: '#41422e',
+                        brcolor: '#E1E1E1',
+                        h3color: '#f7f4ef',
+                        radiocolor1: '#d1d1d1',
+                        radiocolor2: '#beb782',
+                        radiocolor3: '#a4ba91',
+                        bgmenu: '#e3ddc8',
+                        footertext: '#e8e3cc',
+                        bgfooter: '#4d4733',
+                        homebg: '#F5F1E7'
+                    },
+                    lineHeight: {
+                        'body-lineheight': '21px',
+                        'h-lineheight': '50px',
+                    },
+                    fontSize: {
+                        hsize: '45px',
+                        h3size: '18px',
+                        extrasm: '13px',
+                        extralarge: '55px',
+                    },
+                    width: {
+                        wradio: '18px'
+                    },
+                    height: {
+                        hradio: '18px'
+                    },
+                    backgroundImage: {
+                        'shop-category': "url('images/shop-line.svg')",
+                        'on-sale': "url('images/onsale-bg.png')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            @font-face {
+                font-family: "" Gill Sans"";
+                src: url(font/Gill\ Sans.otf);
+            }
+        
+            @font-face {
+                font-family: "" Gill Sans"";
+                font-weight: bold;
+                src: url(font/Gill\ Sans\ Bold.otf);
+            }
+
+            @font-face {
+                font-family: 'cooper-lt-bt', sans-serif;
+                src: url(font/CooperLightBT.ttf);
+            }
+        
+            body {
+                font-family: "Gill Sans";
+            }
+        
+            h2, h3, h4, .faqs li button span{
+                font-family: 'cooper-lt-bt', sans-serif;
+            }
+        
+            .tab-details p{
+                max-width: 1160px;
+            }
+
+            .radio-item input:checked ~ .check {
+                background-color: transparent;
+                border: 1px solid black;
+                width: 28px;
+                height: 28px;
+                margin-top: -5px;
+            }
+
+            .check:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            .radio-item input:checked ~ .check:after {
+                display: block;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 8px;
+            }
+
+            .radio-item .check:after {
+                top: 4px;
+                left: 4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: black;
+            }
+
+            .overlay {
+                background: rgba(41,53,60,0 );
+                background: linear-gradient(180deg, 
+                rgba(41,53,60,0 ) 0.00%, 
+                #29353c 100.00%);
+            }
+   
+            .footer-form-area form input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+
+            .footer-form-area form input[type="checkbox"] {
+                width: 16px; 
+                height: 16px; 
+                border-radius: 9999px; 
+                border: 2px solid #7c7761; 
+                background-color: transparent; 
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            }
+
+            .footer-form-area form input[type="checkbox"]:checked {
+                border-color: #7c7761; 
+                background-color: #7c7761; 
+            }
+
+            .footer-form-area form input[type="checkbox"]:checked::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 8px; 
+                height: 8px; 
+                border-radius: 9999px; 
+                background-color: #FFFFFF; 
+                transform: translate(-50%, -50%);
+            }
+
+
+        }
+
+    </style>
+
+</head>
+
+<!-- body start -->
+
+<body
+    class="bg-homebg text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Start -->
+    <header class="main-header mt-3">
+        <div
+            class="header-promotional flex justify-between bg-bgmenu p-3 rounded-full text-extrasm items-center mb-4 text-black">
+            <div class="language">
+                <p class="">English - USD</p>
+            </div>
+            <div class="promotional-text">
+                <p>Final Reductions on the up to 30 - Off Sale</p>
+            </div>
+            <div class="social-icon flex justify-between gap-2">
+                <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
+                <a href=""><img src="images/instagram-1.svg" alt="" class="w-4 h-4"></a>
+            </div>
+        </div>
+        <div class="header-navigation py-3 font-semibold mb-4 text-black">
+            <ul class="mainmenu flex justify-between text-[17px] items-center items-center">
+                <li class="flex justify-between items-center gap-3">
+                    <a href="#"><img src="images/mobiletoggle.svg" alt=""></a>
+                    <a href=""><img src="images/logo-m.svg" alt=""></a>
+                </li>
+                <li><a href="" class="rounded py-1 px-3 bg-bgmenu hover:bg-bgmenu hidden md:block">Shop</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">About</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">Journal</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">Workshop</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- Main Home Page -->
+    <div class="homepage-main">
+        <!-- Hero Section -->
+        <section class="hero-area mb-5">
+            <div class="hero-item relative mb-9">
+                <div
+                    class="hero-content bg-[rgba(0,0,0,0.4)] md:bg-transparent absolute top-0 left-0 p-4 md:p-14 w-full h-full rounded-2xl">
+                    <h2 class="text-3xl md:text-extralarge text-h3color font-light leading-8 md:leading-[50px] mb-4">
+                        Where art meets <br>
+                        craftsmanship.</h2>
+                    <p class="text-[17px] text-white leading-5 mb-7">Explore our diverse range of pottery collections,
+                        <br> each with its own unique personality.
+                    </p>
+                    <ul class="ml-4">
+                        <li class="list-disc text-[17px] text-white leading-5">
+                            <a href="" class="">Shop All</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-secondary absolute bottom-0 mb-[3%] hidden md:flex justify-center w-full">
+                    <ul
+                        class="flex justify-between items-center gap-3 bg-secondary rounded-full p-4 text-sm text-white">
+                        <li><a href="" class="bg-white text-[#13210e] p-2 rounded-full">Shop</a></li>
+                        <li><a href="" class="bg-[#6b6244] p-2 rounded-full">Cart <span
+                                    class="product-number">2</span></a></li>
+                        <li><a href="" class="p-2 rounded-full">Account</a></li>
+                        <li><a href="" class="p-2 rounded-full">Wishlists</a></li>
+                        <li><a href="" class="p-2 rounded-full">Search</a></li>
+                    </ul>
+                </div>
+                <img src="images/hero-bg.png" alt="" class="w-full">
+            </div>
+
+            <div class="shop-categories">
+                <div class="category-item">
+                    <ul class="flex justify-start lg:justify-between items-center flex-wrap gap-3">
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">
+                                <span>View</span><span> All</span></a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Pot
+                                Collection</a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Serving
+                                Platter</a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Hand-Painted
+                                Vase</a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Modular
+                                Kitchen</a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Ceramic
+                                Mugs</a></li>
+                        <li><a href=""
+                                class="py-1 px-8 border border-[#2D3246] rounded border-opacity-20 text-black text-extrasm">Home
+                                Organizers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <hr class="border-[#2D3246] border-opacity-20">
+
+        <!-- shop collection  -->
+        <section class="shop-collection mt-16 md:mt-20 mb-16 md:mb-24">
+            <div class="shop-header flex justify-between">
+                <h3 class="text-hsize leading-h-lineheight text-hcolor mb-8">Shop Collection</h3>
+                <div class="review-trustpilot flex items-center space-x-1">
+                    <img src="images/smile.svg" alt="" class="w-7 h-7 mr-4">
+                    <hr class="border-black w-7 border">
+                    <p class="text-extrasm text-black">4.6 Trustpilot Reviews</p>
+                </div>
+            </div>
+            <div class="shop-collection-item flex flex-col lg:flex-row lg:-space-x-1">
+                <img src="images/shop-collection.png" alt="">
+                <div
+                    class="bg-secondary w-full py-10 md:py-16 px-10 md:px-20 bg-shop-category bg-no-repeat bg-contain bg-left rounded-r-0 mt-4 lg:mt-0 lg:rounded-r-xl">
+                    <span class="text-[12px] text-bgcolor">Shop by categories</span>
+                    <ul class="text-3xl md:text-hsize text-bgcolor leading-8 md:leading-h-lineheight mt-8 mb-12">
+                        <li class="mb-6"><a href="">Pot Collection</a></li>
+                        <li class="mb-6"><a href=""
+                                class="underline decoration-1 decoration-[#f5f3e7] decoration-opacity-40">Kitchen
+                                Organizers</a></li>
+                        <li class="mb-6"><a href="">Storage</a></li>
+                        <li><a href="">Mugs and Cups</a></li>
+                    </ul>
+                    <ul class="ml-4">
+                        <li class="list-disc text-[17px] text-white leading-5">
+                            <a href="" class="">Shop All</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop All -->
+        <section class="shop-products mb-20">
+            <div class="shop-product-head flex justify-between mb-8 md:mb-14">
+                <h2 class="text-hsize font-light text-hcolor leading-h-lineheight text-left">Shop All</h2>
+                <div class="slider-btn-area flex justify-between items-center space-x-1 md:space-x-6">
+                    <p class="see-all text-extrasm text-black cursor-pointer">See All</p>
+                    <img src="images/left-arrow.svg" alt="" class="left-arrow cursor-pointer w-4 h-4">
+                    <div class="w-20 h-2 bg-[#979797] rounded-full">
+                        <div class="w-1/3 h-full text-center text-xs text-white bg-black rounded-full">
+                        </div>
+                    </div>
+                    <img src="images/right-arrow.svg" alt="" class="right-arrow cursor-pointer w-4 h-4">
+                </div>
+            </div>
+
+            <div class="shop-pr-content flex flex-col md:flex-row justify-between gap-2">
+                <div class="shop-item mb-8 lg:mb-0 relative">
+                    <div class="group relative">
+                        <img src="images/product-image-4.png" alt="">
+                        <button
+                            class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible bg-secondary 
+                        text-white group-hover:translate-y-0 bottom-0 mb-6 w-10/12 rounded-full p-4 text-extrasm text-white ml-10">
+                            Quick View
+                        </button>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Bathroom Set</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+
+
+                </div>
+                <div class="shop-item mb-8 lg:mb-0 relative">
+                    <div class="group relative">
+                        <img src="images/product-image-9.png" alt="">
+                        <button
+                            class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible bg-secondary 
+                        text-white group-hover:translate-y-0 bottom-0 mb-6 w-10/12 rounded-full p-4 text-extrasm text-white ml-10">
+                            Quick View
+                        </button>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Teacup Set</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+                </div>
+                <div class="shop-item mb-8 lg:mb-0">
+                    <div class="group relative">
+                        <img src="images/product-image-10.png" alt="">
+                        <button
+                            class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible bg-secondary 
+                        text-white group-hover:translate-y-0 bottom-0 mb-6 w-10/12 rounded-full p-4 text-extrasm text-white ml-10">
+                            Quick View
+                        </button>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Kitchenware</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+                </div>
+            </div>
+
+            <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer" checked>
+                    <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- On Sale  -->
+        <section class="on-sale mb-20 md:mb-24">
+            <div class="on-sale-content flex justify-between flex-col lg:flex-row gap-x-10">
+                <div
+                    class="onsale-left-item bg-[#e5e2d8] w-full lg:w-1/2 pt-8 pb-16 px-14 md:px-28 rounded-xl mb-5 lg:mb-0">
+                    <span class="text-sm text-black bg-[#d0baac] rounded-sm p-1">SALE 20%</span>
+                    <img src="images/hand-1.png" alt="" class="w-full">
+                    <div class="flex justify-between items-center">
+                        <p class="text-[15px] text-black">Candle Holder</p>
+                        <p class="text-sm text-[#7c7c7c]">£287.90 <span class="text-extrasm text-black">£187.90</span>
+                        </p>
+                    </div>
+                    <hr class="border-[#707070] border-opacity-15 my-4">
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm text-black border border-black rounded-full px-1">Mugs</p>
+                        <div class="product-reviews flex justify-center ">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star-w.svg" alt="">
+                            <span class="ml-3 text-extrasm text-black">22</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="onsale-right-item bg-on-sale bg-cover bg-no-repeat w-full lg:w-1/2 rounded-xl">
+                    <div
+                        class="mt-18 lg:mt-36 mx-14 lg:mx-28 flex flex-col justify-center lg:justify-between items-center text-white h-[45vh]">
+                        <img src="images/limited.svg" alt="">
+                        <h3
+                            class="mt-4 mb-8 text-[#f0eee2] text-3xl md:text-extralarge leading-8 md:leading-h-lineheight">
+                            On Sale.</h3>
+                        <div class="countdown flex justify-between items-center space-x-7 md:space-x-14">
+                            <div class="time text-center">
+                                <h4 class="text-[#f7f4ef] text-4xl md:text-6xl leading-9 md:leading-[64px] mb-3">11</h4>
+                                <p>Days</p>
+                            </div>
+                            <div class="time text-center">
+                                <h4 class="text-[#f7f4ef] text-4xl md:text-6xl leading-9 md:leading-[64px] mb-3">21</h4>
+                                <p>Hours</p>
+                            </div>
+                            <div class="time text-center">
+                                <h4 class="text-[#f7f4ef] text-4xl md:text-6xl leading-9 md:leading-[64px] mb-3">45</h4>
+                                <p>Minutes</p>
+                            </div>
+                            <div class="time text-center">
+                                <h4 class="text-[#f7f4ef] text-4xl md:text-6xl leading-9 md:leading-[64px] mb-3">53</h4>
+                                <p>Seconds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Why Swiss Home -->
+        <section class="why-swiss-home mb-24">
+            <div
+                class="whyswiss-content flex flex-col lg:flex-row justify-between lg:items-center gap-8 mb-10 md:mb-20">
+                <h2 class="text-hcolor text-hsize leading-h-lineheight">Why Swiss?</h2>
+                <div class="swiss-content-item flex justify-between space-x-6 md:space-x-20">
+                    <div class="flex items-center space-x-1 md:space-x-3.5">
+                        <span
+                            class="border border-[#707070] border-opacity-20 rounded-full w-10 h-10 text-center text-sm pt-2">1</span>
+                        <p class="leading-4 text-black text-sm">Handmade <br> Goodies</p>
+                    </div>
+                    <div class="flex items-center space-x-1 md:space-x-3.5">
+                        <span
+                            class="border border-[#707070] border-opacity-20 rounded-full w-10 h-10 text-center text-sm pt-2">2</span>
+                        <p class="leading-4 text-black text-sm">High Quality <br> Premium Materials</p>
+                    </div>
+                    <div class="flex items-center space-x-1 md:space-x-3.5">
+                        <span
+                            class="border border-[#707070] border-opacity-20 rounded-full w-10 h-10 text-center text-sm pt-2">3</span>
+                        <p class="leading-4 text-black text-sm">Easy Return <br> Policy</p>
+                    </div>
+                </div>
+                <p><a href="" class="underline text-sm text-black leading-4">Learn more</a> about our commitment <br> to
+                    high quality products.</p>
+            </div>
+
+            <div class="sticky-slider">
+                <div class="sticky-item-area">
+                    <div class="sticky-item bg-[#ebe8dc] pt-24 lg:pt-48 px-7 lg:pl-28 rounded-2xl relative">
+                        <img src="images/bag.svg" alt="">
+
+                        <div class="sticky-bottom-content flex justify-between gap-x-7 lg:gap-x-28 pt-16 pb-24">
+                            <h3
+                                class="w-1/2 text-hcolor text-[25px] md:text-hsize leading-8 md:leading-h-lineheight pr-0 lg:pr-40">
+                                Our artisans are masters
+                                of their craft, with years of experience.</h3>
+                            <div class="w-1/2">
+                                <p class="pr-0 lg:pr-40">Our pottery collections are as diverse as the people who
+                                    appreciate
+                                    them. From the rustic charm of our “Earthen Elegance” collection to the vibrant
+                                    energy of “Colorful Creations,” there’s a piece of pottery for every taste and
+                                    style.</p>
+                                <ul class="ml-4 pt-4">
+                                    <li class="list-disc leading-5">
+                                        <a href="" class="">Learn more about us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-0 right-0 mr-14 mb-3">01</span>
+                    </div>
+
+                    <div class="sticky-item bg-[#E3DFCC] pt-7 rounded-t-0 rounded-b-2xl -mt-2 relative">
+                        <span class="absolute bottom-0 right-0 mr-14 mb-1">02</span>
+                    </div>
+
+                    <div class="sticky-item bg-[#D8D4C0] pt-7 rounded-t-0 rounded-b-2xl -mt-1 relative">
+                        <span class="absolute bottom-0 right-0 mr-14 mb-1">03</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FAQs -->
+        <section class="faqs">
+            <div class="faq-content">
+                <div class="flex justify-between mb-10">
+                    <h2 class="text-hcolor text-hsize leading-h-lineheight">Q&A</h2>
+                    <div class="space-x-2">
+                        <button class="bg-[#4b442c] p-2 text-sm text-[#d0d0d0] rounded">Platform</button>
+                        <button
+                            class="p-2 text-sm text-black border border-[#dbdbdb] rounded hover:bg-[#4b442c] hover:text-[#d0d0d0] ">Payment</button>
+                        <button
+                            class="p-2 text-sm text-black border border-[#dbdbdb] rounded hover:bg-[#4b442c] hover:text-[#d0d0d0]">Support</button>
+                    </div>
+                </div>
+                <ul class="mb-10">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[21px] md:text-[27px] font-light leading-6 md:leading-8">Do you
+                                offer custom pottery
+                                creations?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[21px] md:text-[27px] font-light leading-6 md:leading-8">What is
+                                your return and exchange
+                                policy?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. </div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[21px] md:text-[27px] font-light leading-6 md:leading-8">How do I
+                                track my order?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[21px] md:text-[27px] font-light leading-6 md:leading-8">Do you
+                                ship internationally?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                </ul>
+                <div class="flex justify-center items-center">
+                    <span
+                        class="border border-[#707070] rounded-full border-opacity-10 text-black text-sm py-2 px-1">Still
+                        have a question? Visit <a href="" class="underline">help center</a> or <a href=""
+                            class="underline">submit a message</a></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- I Use Swiss -->
+        <!-- <section class="use-swiss mt-8">
+
+            <div class="use-swiss-header flex justify-between items-center mb-8">
+                <h2 class="text-hsize font-light text-hcolor leading-h-lineheight text-left">#iuseswiss</h2>
+                <div class="social-insta flex items-center space-x-2">
+                    <a href=""><img src="images/instagram-1.svg" alt="" class="w-9 h-9"></a>
+                    <p>Follow us on Instagram</p>
+                </div>
+            </div>
+
+
+            <div class="use-swiss-img flex flex-col md:flex-row justify-center lg:justify-between flex-wrap gap-3">
+                <img src="images/swiss-1.png" alt="" class="w-full">
+                <img src="images/swiss-2.png" alt="" class="w-full">
+                <img src="images/swiss-3.png" alt="" class="w-full">
+                <img src="images/swiss-4.png" alt="" class="w-full">
+            </div>
+        </section> -->
+
+        <!-- Payment Instruction -->
+        <section class="payment-instruction mt-16 mb-20">
+            <div class="instruction-content flex flex-col lg:flex-row justify-between">
+                <div class="instruction-item pr-0 lg:pr-32 mr-0 lg:mr-10 mb-10 lg:mb-0">
+                    <img src="images/square-1.svg" alt="">
+                    <h4 class="mt-8 mb-10 text-black text-xl">Secure Payment</h4>
+                    <p>Shop with confidence! We offer secure payment options to keep your transactions safe and
+                        worry-free</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+
+                <div class="instruction-item pr-0 lg:pr-32 mr-0 lg:mr-10 mb-10 lg:mb-0">
+                    <img src="images/circle-1.svg" alt="">
+                    <h4 class="mt-8 mb-10 text-black text-xl">Limited Time Offers</h4>
+                    <p>Subscribe and get 20% off your first purchase. Because we know just how is to get the size, color
+                        and even the garment right</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+                <div class="instruction-item">
+                    <img src="images/rectangle-1.svg" alt="">
+                    <h4 class="mt-8 mb-10 text-black text-xl">Free Shipping</h4>
+                    <p>Get your favorites delivered to your door with free Shipping! Shop now and save on shipping
+                        costs.</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- Footer start -->
+    <footer class="mb-8 text-footertext">
+        <div class="bg-bgfooter main-footer-area rounded-xl">
+            <div class="footer-top flex justify-start gap-2 px-8 md:px-11 pt-8 pb-12">
+                <img src="images/star-sign.svg" alt="">
+                <p class="text-sm leading-[14px]">Made with love <br> In Zurich</p>
+            </div>
+            <div class="footer-primary flex flex-wrap justify-between px-8 md:px-11 pb-12 md:pb-44">
+                <div class="footer-logo-area flex flex-col w-1/2 md:w-2/5">
+                    <a href=""><img src="images/logo.svg" alt=""></a>
+                    <div class="footer-form-area">
+                        <form action="">
+                            <input type="email" name="" id="" placeholder="Enter your email address"
+                                class="my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-[#7c7761]">
+                                <span>I agree to terms and services.</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-contact flex flex-col w-1/2 md:w-1/5 pl-8 pb-11 md:pl-12 lg:pl-24">
+                    <h4 class="pb-9">Contact</h4>
+                    <p class="mb-8 text-sm pt-2">290 Maryam Springs <br> Courbevoie, NYC <br> +1 283 879 90</p>
+                    <span class="text-[#7c7761]">Need Help?</span>
+                    <a href="">Send a message</a>
+                </div>
+                <div class="footer-company flex flex-col w-1/2 md:w-1/5 md:pl-12 pb-8 lg:pl-24">
+                    <h4 class="pb-9">Company</h4>
+                    <ul>
+                        <li class="text-sm leading-9"><a href="">Privacy Policy</a></li>
+                        <li class="text-sm leading-9"><a href="">Blog</a></li>
+                        <li class="text-sm leading-9"><a href="">Contact</a></li>
+                        <li class="text-sm leading-9"><a href="">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-shop flex flex-col w-1/2 md:w-1/5 pl-8 pb-11 md:pl-12 lg:pl-24">
+                    <h4 class="pb-9">Shop</h4>
+                    <ul>
+                        <li class="text-sm leading-9"><a href="">Wishlists</a></li>
+                        <li class="text-sm leading-9"><a href="">Help Center</a></li>
+                        <li class="text-sm leading-9"><a href="">Store Locator</a></li>
+                        <li class="text-sm leading-9"><a href="">Gift Cards</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-footertext">
+            <div class="footer-secondary flex justify-between items-center flex-wrap p-8 md:p-11">
+                <div class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] w-1/2 md:w-1/3">
+                    <img src="images/internet.svg" alt="">
+                    <p>English <span class="bg-[#7c7761] rounded-3xl p-1 text-[11px] ">USD</span></p>
+                </div>
+                <div
+                    class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center w-1/2 md:w-1/3">
+                    <a href=""><img src="images/linkedin-1.svg" alt="" class="w-4 h-4"></a>
+                    <a href=""><img src="images/twitter-1.svg" alt="" class="w-4 h-4"></a>
+                    <a href=""><img src="images/instagram-2.svg" alt="" class="w-4 h-4"></a>
+                </div>
+                <div
+                    class="footer-payment flex items-center justify-center md:justify-end pt-4 md:pt-0 w-full md:w-1/3">
+                    <a href=""><img src="images/Payment.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            button.setAttribute("aria-expanded", button.getAttribute("aria-expanded") === "false" ? "true" : "false");
+            content.style.maxHeight = button.getAttribute("aria-expanded") === "true" ? content.scrollHeight + "px" : "0";
+        }
+    </script> -->
+</body>
+
+</html>

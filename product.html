@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#454545',
+                        secondary: '#625837',
+                        btntext: '#f7f4ed',
+                        bgcolor: '#F5F3E7',
+                        hcolor: '#41422e',
+                        brcolor: '#E1E1E1',
+                        h3color: '#f7f4ef',
+                        radiocolor1: '#d1d1d1',
+                        radiocolor2: '#beb782',
+                        radiocolor3: '#a4ba91',
+                        bgmenu: '#e3ddc8',
+                        footertext: '#e8e3cc',
+                        bgfooter: '#4d4733'
+                    },
+                    lineHeight: {
+                        'body-lineheight': '21px',
+                        'h-lineheight': '50px',
+                    },
+                    fontSize: {
+                        hsize: '45px',
+                        h3size: '18px'
+                    },
+                    width: {
+                        wradio: '18px'
+                    },
+                    height: {
+                        hradio: '18px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            @font-face {
+                font-family: "" Gill Sans"";
+                src: url(font/Gill\ Sans.otf);
+            }
+        
+            @font-face {
+                font-family: "" Gill Sans"";
+                font-weight: bold;
+                src: url(font/Gill\ Sans\ Bold.otf);
+            }
+
+            @font-face {
+                font-family: 'cooper-lt-bt', sans-serif;
+                src: url(font/CooperLightBT.ttf);
+            }
+        
+            body {
+                font-family: "Gill Sans";
+            }
+        
+            h2, .faqs li button span{
+                font-family: 'cooper-lt-bt', sans-serif;
+            }
+        
+            .tab-details p{
+                max-width: 1160px;
+            }
+
+            .radio-item input:checked ~ .check {
+                background-color: transparent;
+                border: 1px solid black;
+                width: 28px;
+                height: 28px;
+                margin-top: -5px;
+            }
+
+            .check:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            .radio-item input:checked ~ .check:after {
+                display: block;
+                width: 10px;
+                height: 10px;
+                top: 8px;
+                left: 8px;
+            }
+
+            .radio-item .check:after {
+                top: 4px;
+                left: 4px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: black;
+            }
+
+            .overlay {
+                background: rgba(41,53,60,0 );
+                background: linear-gradient(180deg, 
+                rgba(41,53,60,0 ) 0.00%, 
+                #29353c 100.00%);
+            }
+   
+            .footer-form-area form input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+
+            .footer-form-area form input[type="checkbox"] {
+                width: 16px; 
+                height: 16px; 
+                border-radius: 9999px; 
+                border: 2px solid #7c7761; 
+                background-color: transparent; 
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            }
+
+            .footer-form-area form input[type="checkbox"]:checked {
+                border-color: #7c7761; 
+                background-color: #7c7761; 
+            }
+
+            .footer-form-area form input[type="checkbox"]:checked::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 8px; 
+                height: 8px; 
+                border-radius: 9999px; 
+                background-color: #FFFFFF; 
+                transform: translate(-50%, -50%);
+            }
+
+
+        }
+
+    </style>
+
+</head>
+
+<!-- body start -->
+
+<body class="bg-bgcolor text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Start -->
+    <header class="main-header mt-3">
+        <div
+            class="header-promotional flex justify-between bg-bgmenu p-3 rounded-full text-[13px] items-center mb-4 text-black">
+            <div class="language">
+                <p class="">English - USD</p>
+            </div>
+            <div class="promotional-text">
+                <p>Final Reductions on the up to 30 - Off Sale</p>
+            </div>
+            <div class="social-icon flex justify-between gap-2">
+                <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
+                <a href=""><img src="images/instagram-1.svg" alt="" class="w-4 h-4"></a>
+            </div>
+        </div>
+        <div class="header-navigation py-3 font-semibold mb-4 text-black">
+            <ul class="mainmenu flex justify-between text-[17px] items-center items-center">
+                <li class="flex justify-between items-center gap-3">
+                    <a href="#"><img src="images/mobiletoggle.svg" alt=""></a>
+                    <a href=""><img src="images/logo-m.svg" alt=""></a>
+                </li>
+                <li><a href="" class="rounded py-1 px-3 bg-bgmenu hover:bg-bgmenu hidden md:block">Shop</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">About</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">Journal</a></li>
+                <li><a href="" class="rounded py-1 px-3 hover:bg-bgmenu hidden md:block">Workshop</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- Main Product Single Page -->
+    <div class="product-main">
+        <!-- Product Details -->
+        <section class="product-details mb-20">
+            <div class="product-details-head flex flex-col lg:flex-row">
+                <div class="product-img flex-1 flex justify-center product-img w-full lg:w-2/3 relative">
+                    <a href="#"
+                        class="mb-6 flex items-center gap-2 absolute top-0 left-0 ml-7 lg:ml-14 mt-3 lg:mt-5 z-10">
+                        <img src="images/icon-2.svg" alt="">
+                        <span>Back to Shop</span>
+                    </a>
+                    <div class="menu-secondary absolute bottom-0 right-0 mb-[10%] mr-[5%] hidden md:block">
+                        <ul
+                            class="flex justify-between items-center gap-3 bg-secondary rounded-full p-4 text-sm text-white">
+                            <li><a href="" class="bg-white text-[#13210e] p-2 rounded-full">Shop</a></li>
+                            <li><a href="" class="bg-[#6b6244] p-2 rounded-full">Cart <span
+                                        class="product-number">2</span></a></li>
+                            <li><a href="" class="p-2 rounded-full">Account</a></li>
+                            <li><a href="" class="p-2 rounded-full">Wishlists</a></li>
+                            <li><a href="" class="p-2 rounded-full">Search</a></li>
+                        </ul>
+                    </div>
+                    <img src="images/product-image-1.png" alt="Product Image" class="w-full rounded-lg">
+                </div>
+                <div class="product-content-details mt-6 lg:mt-0 lg:ml-6 text-black p-6 rounded-lg w-full lg:w-1/3">
+                    <div class="flex justify-between">
+                        <p class="prouct-title text-[17px] text-black">Hand-Painted</p>
+                        <div class="product-reviews flex justify-center ">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <img src="images/star.svg" alt="">
+                            <span class="ml-3">6</span>
+                        </div>
+                    </div>
+                    <div class="product-price flex items-center justify-between mt-2 mb-3.5">
+                        <span class="text-sm">17.30</span>
+                    </div>
+                    <p class="product-made mb-6">Crafted with precision and care, this teacup set embodies the perfect
+                        balance.</p>
+
+                    <div class="product-variation flex items-center space-x-2 mb-8">
+                        <label class="radio-item block relative py-0 px-6  text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span
+                                class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6  text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer" checked>
+                            <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span
+                                class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span
+                                class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                    </div>
+
+                    <select name="" id="product-select"
+                        class="mb-9 bg-transparent w-full rounded-full border border-brcolor mt-8 p-5">
+                        <option value="">Ceramic</option>
+                        <option value="">Ceramic</option>
+                        <option value="">Ceramic</option>
+                    </select>
+
+                    <div class="product-stock flex justify-between text-sm mb-4">
+                        <div class="flex flex-1 justify-start">
+                            <img src="images/clock-1.svg" alt="" class="mr-2">
+                            <p>3 in stock.</p>
+                        </div>
+                        <a href="#">Find in a Nearby Store</a>
+                    </div>
+
+                    <hr class="border-brcolor mb-6">
+
+                    <div class="payment flex justify-between text-sm mb-4">
+                        <p>Pay in 4 installments.</p>
+                        <a href=""><img src="images/shoppay.svg" alt=""></a>
+                    </div>
+
+                    <button class="addto-cart-btn bg-secondary text-btntext py-3.5 rounded mb-6 w-full rounded-3xl">Add
+                        to
+                        Cart</button>
+
+                    <div class="flex justify-between mb-5">
+                        <a href="" class="flex justify-center items-center">
+                            <img src="images/share.svg" alt="" class="mr-3">
+                            <span>Share</span>
+                        </a>
+
+                        <a href="">
+                            <img src="images/heart-1.svg" alt="">
+                        </a>
+                    </div>
+
+                    <hr class="border-brcolor">
+
+                    <div class="flex justify-between mt-3.5 mb-3.5">
+                        <h4>Description</h4>
+                        <img src="images/icon.svg" alt="">
+                    </div>
+
+                    <p class="product-desc mb-5">Our artisans are masters of their craft, with years of experience and
+                        a deep understanding of pottery traditions. Each piece is lovingly shaped by hand.
+                    </p>
+                    <hr class="border-brcolor">
+                    <div class="product-shipping flex justify-between my-5">
+                        <h4>Shipping and Returns</h4>
+                        <img src="images/icon.svg" alt="">
+                    </div>
+
+                    <hr class="border-brcolor">
+                </div>
+            </div>
+
+            <div class="product-tabs mt-10 lg:mt-20">
+                <div
+                    class="product-tabs-menu text-sm font-medium text-center text-[#262626] border-b border-[rgba(55,55,56,0.1 )]">
+                    <ul class="flex flex-wrap">
+                        <li class="me-2">
+                            <a href="#" class="inline-block p-4 border-b-2 border-[#373738] rounded-t-lg active"
+                                aria-current="page">Details</a>
+                        </li>
+                        <li class="me-2">
+                            <a href="#"
+                                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg">Materials</a>
+                        </li>
+                        <li class="me-2">
+                            <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg">Reviews
+                                <span class="bg-secondary rounded-xl text-white py-1.5 px-2">45</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-details">
+                    <p class="mt-8">Our Celestial Serenity Teacup Set not only elevates your tea-drinking experience but
+                        also makes
+                        for a
+                        beautiful gift for tea lovers and collectors of exquisite pottery. Whether for your own
+                        enjoyment or
+                        as a thoughtful gift, these teacups are a testament to the beauty of handcrafted pottery.
+                        <br><br>
+                        Elevate your tea-drinking experience with our Celestial Serenity Teacup Set. Crafted with
+                        precision
+                        and care, this teacup set embodies the perfect balance between artistry and functionality.
+                        Whether
+                        you’re sipping a calming chamomile or indulging in an energizing green tea, these teacups will
+                        enhance the ritual.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Displayed Product -->
+        <section class="product-info flex flex-col lg:flex-row justify-between mb-12 lg:mb-32">
+            <div class="pr-content-area flex-col lg:flex-row w-full lg:w-1/3 pb-5">
+                <h2 class="text-hsize font-light text-hcolor leading-h-lineheight text-left mb-7">High quality</h2>
+                <p class="mb-3">Our pottery collections are as diverse as the people who appreciate them. From the
+                    rustic charm of our
+                    “Earthen Elegance” collection to the vibrant energy of “Colorful Creations,” there’s a piece of
+                    pottery
+                    for every taste and style. Explore our collections and let your heart guide you to the piece that
+                    resonates with your spirit.</p>
+                <p class="mb-6">Our artisans are masters of their craft, with years of experience and a deep
+                    understanding of pottery
+                    traditions. Each piece is lovingly shaped by hand, ensuring that no two items are exactly alike.
+                    This
+                    uniqueness is what gives our pottery its charm and character.</p>
+                <ul>
+                    <li class="pb-5">✦ High Quality</li>
+                    <li class="pb-5">✦ Premium</li>
+                    <li class="pb-5">✦ Hand-made</li>
+                    <li class="pb-5">✦ Decorative Patterns</li>
+                    <li class="pb-5">✦ Giaze Finish</li>
+                </ul>
+            </div>
+
+            <div class="pr-img-area flex justify-end items-center flex-col md:flex-row w-full gap-8 lg:w-2/3">
+                <div>
+                    <img src="images/product-image-2.png" alt="">
+                </div>
+                <div class="relative">
+                    <img src="images/product-image-2.png" alt="">
+                    <div class="absolute flex left-1/4 top-1/2">
+                        <a href=""><img src="images/focal-point.svg" alt=""></a>
+                    </div>
+                    <div class="absolute flex left-2/3 top-1/4">
+                        <a href=""><img src="images/focal-point.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FAQs -->
+        <section class="faqs">
+            <div class="faq-content flex flex-col">
+                <ul>
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[27px] font-light leading-8">Do you offer custom pottery
+                                creations?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[27px] font-light leading-8">What is your return and exchange
+                                policy?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. </div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[27px] font-light leading-8">How do I track my order?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                    <li>
+                        <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
+                            aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span class="flex-1 text-[27px] font-light leading-8">Do you ship internationally?</span>
+                            <img src="images/plus.svg" alt="">
+                        </button>
+                        <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
+                            style="transition: max-height 0.3s ease-in-out 0s;">
+                            <div class="pb-5 leading-relaxed">
+                                <div class="space-y-2 leading-relaxed">Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Porro perferendis in non vel placeat, quaerat tenetur sint quia
+                                    autem officia cumque asperiores fugiat aliquam sed ullam assumenda voluptatem
+                                    blanditiis rerum!</div>
+                            </div>
+                        </div>
+                    </li>
+                    <hr class="border-brcolor">
+                </ul>
+            </div>
+        </section>
+
+        <!-- Why Swiss -->
+        <section class="why-swiss">
+            <h2 class="why-swiss-head text-hsize font-light text-hcolor leading-h-lineheight text-left mb-9 mt-3">Why
+                Swiss</h2>
+            <div class="why-swiss-img flex flex-col md:flex-row justify-center lg:justify-between gap-3">
+                <div class="img-item mb-5 lg:mb-0 relative">
+                    <img src="images/product-image-3.png" alt="" class="w-full">
+                    <div
+                        class="overlay absolute flex items-end justify-between left-0 bottom-0 w-full h-full rounded-xl px-7 pb-5">
+                        <h3 class="text-h3size text-h3color">Glaze Finish</h3>
+                        <img src="images/plus-w.svg" alt="">
+                    </div>
+                </div>
+                <div class="img-item mb-5 lg:mb-0 relative">
+                    <img src="images/product-image-6.png" alt="" class="w-full">
+                    <div
+                        class="overlay absolute flex items-end justify-between left-0 bottom-0 w-full h-full rounded-xl px-7 pb-5">
+                        <h3 class="text-h3size text-h3color">Premium Quality</h3>
+                        <img src="images/plus-w.svg" alt="">
+                    </div>
+                </div>
+                <div class="img-item mb-5 lg:mb-0 relative">
+                    <img src="images/product-image-7.png" alt="" class="w-full">
+                    <div
+                        class="overlay absolute flex items-end justify-between left-0 bottom-0 w-full h-full rounded-xl px-7 pb-5">
+                        <h3 class="text-h3size text-h3color">Hand-made</h3>
+                        <img src="images/minus-w.svg" alt="">
+                    </div>
+
+                    <p class="absolute bottom-0 left-0 px-7 py-14 text-[#f7f4ed] text-[13px] leading-4">Because we know
+                        just how hard it is to get the size, color and even the garment right in the fashion.</p>
+                </div>
+                <div class="img-item mb-5 lg:mb-0 relative">
+                    <img src="images/product-image-8.png" alt="" class="w-full">
+                    <div
+                        class="overlay absolute flex items-end justify-between left-0 bottom-0 w-full h-full rounded-xl px-7 pb-5">
+                        <h3 class="text-h3size text-h3color">Functional</h3>
+                        <img src="images/plus-w.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Instruction -->
+        <section class="payment-instruction mt-28 mb-24">
+            <div class="instruction-content flex flex-col lg:flex-row justify-between">
+                <div class="instruction-item pr-0 lg:pr-32 mr-0 lg:mr-10 mb-10 lg:mb-0">
+                    <img src="images/square-1.svg" alt="">
+                    <h4 class="mt-12 mb-10 text-black text-xl">Secure Payment</h4>
+                    <p>Shop with confidence! We offer secure payment options to keep your transactions safe and
+                        worry-free</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+
+                <div class="instruction-item pr-0 lg:pr-32 mr-0 lg:mr-10 mb-10 lg:mb-0">
+                    <img src="images/circle-1.svg" alt="">
+                    <h4 class="mt-12 mb-10 text-black text-xl">Limited Time Offers</h4>
+                    <p>Subscribe and get 20% off your first purchase. Because we know just how is to get the size, color
+                        and even the garment right</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+                <div class="instruction-item">
+                    <img src="images/rectangle-1.svg" alt="">
+                    <h4 class="mt-12 mb-10 text-black text-xl">Free Shipping</h4>
+                    <p>Get your favorites delivered to your door with free Shipping! Shop now and save on shipping
+                        costs.</p>
+                    <hr class="border-brcolor mt-8">
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="related-products mb-16">
+            <h2 class="rel-product-head text-hsize font-light text-hcolor leading-h-lineheight text-left mb-14">You may
+                be interested in
+            </h2>
+            <div class="rel-pr-content flex flex-col md:flex-row justify-between gap-2">
+                <div class="rel-item mb-10 lg:mb-0">
+                    <img src="images/product-image-4.png" alt="">
+                    <p class="mt-4 mb-1 text-[15px] text-black">Serving Platter</p>
+                    <p class="text-[13px] text-black">$27.30</p>
+                </div>
+                <div class="rel-item mb-10 lg:mb-0">
+                    <img src="images/product-image-9.png" alt="">
+                    <p class="mt-4 mb-1 text-[15px] text-black">Hand-Painted Vase</p>
+                    <p class="text-[13px] text-black">$27.30</p>
+                </div>
+                <div class="rel-item mb-10 lg:mb-0">
+                    <img src="images/product-image-10.png" alt="">
+                    <p class="mt-4 mb-1 text-[15px] text-black">Teacup Set</p>
+                    <p class="text-[13px] text-black">$27.30</p>
+                </div>
+            </div>
+
+            <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer" checked>
+                    <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                    <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                </label>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer start -->
+    <footer class="mb-8 text-footertext">
+        <div class="bg-bgfooter main-footer-area rounded-xl">
+            <div class="footer-top flex justify-start gap-2 px-8 md:px-11 pt-8 pb-12">
+                <img src="images/star-sign.svg" alt="">
+                <p class="text-sm leading-[14px]">Made with love <br> In Zurich</p>
+            </div>
+            <div class="footer-primary flex flex-wrap justify-between px-8 md:px-11 pb-12 md:pb-44">
+                <div class="footer-logo-area flex flex-col w-1/2 md:w-2/5">
+                    <a href=""><img src="images/logo.svg" alt=""></a>
+                    <div class="footer-form-area">
+                        <form action="">
+                            <input type="email" name="" id="" placeholder="Enter your email address"
+                                class="my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-[#7c7761]">
+                                <span>I agree to terms and services.</span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-contact flex flex-col w-1/2 md:w-1/5 pl-8 pb-11 md:pl-12 lg:pl-24">
+                    <h4 class="pb-9">Contact</h4>
+                    <p class="mb-8 text-sm pt-2">290 Maryam Springs <br> Courbevoie, NYC <br> +1 283 879 90</p>
+                    <span class="text-[#7c7761]">Need Help?</span>
+                    <a href="">Send a message</a>
+                </div>
+                <div class="footer-company flex flex-col w-1/2 md:w-1/5 md:pl-12 pb-8 lg:pl-24">
+                    <h4 class="pb-9">Company</h4>
+                    <ul>
+                        <li class="text-sm leading-9"><a href="">Privacy Policy</a></li>
+                        <li class="text-sm leading-9"><a href="">Blog</a></li>
+                        <li class="text-sm leading-9"><a href="">Contact</a></li>
+                        <li class="text-sm leading-9"><a href="">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-shop flex flex-col w-1/2 md:w-1/5 pl-8 pb-11 md:pl-12 lg:pl-24">
+                    <h4 class="pb-9">Shop</h4>
+                    <ul>
+                        <li class="text-sm leading-9"><a href="">Wishlists</a></li>
+                        <li class="text-sm leading-9"><a href="">Help Center</a></li>
+                        <li class="text-sm leading-9"><a href="">Store Locator</a></li>
+                        <li class="text-sm leading-9"><a href="">Gift Cards</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-footertext">
+            <div class="footer-secondary flex justify-between items-center flex-wrap p-8 md:p-11">
+                <div class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] w-1/2 md:w-1/3">
+                    <img src="images/internet.svg" alt="">
+                    <p>English <span class="bg-[#7c7761] rounded-3xl p-1 text-[11px] ">USD</span></p>
+                </div>
+                <div
+                    class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center w-1/2 md:w-1/3">
+                    <a href=""><img src="images/linkedin-1.svg" alt="" class="w-4 h-4"></a>
+                    <a href=""><img src="images/twitter-1.svg" alt="" class="w-4 h-4"></a>
+                    <a href=""><img src="images/instagram-2.svg" alt="" class="w-4 h-4"></a>
+                </div>
+                <div
+                    class="footer-payment flex items-center justify-center md:justify-end pt-4 md:pt-0 w-full md:w-1/3">
+                    <a href=""><img src="images/Payment.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            button.setAttribute("aria-expanded", button.getAttribute("aria-expanded") === "false" ? "true" : "false");
+            content.style.maxHeight = button.getAttribute("aria-expanded") === "true" ? content.scrollHeight + "px" : "0";
+        }
+    </script> -->
+</body>
+
+</html>
