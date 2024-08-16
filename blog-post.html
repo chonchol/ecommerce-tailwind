@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Page</title>
+    <title>Blog Post Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -121,6 +121,44 @@
                 transform: translate(-50%, -50%);
             }
 
+            
+
+            .right-subscriber form input[type="checkbox"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }
+
+            .right-subscriber form input[type="checkbox"] {
+                width: 16px; 
+                height: 16px; 
+                border-radius: 9999px; 
+                border: 2px solid #7c7761; 
+                background-color: transparent; 
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            }
+
+            .right-subscriber form input[type="checkbox"]:checked {
+                border-color: #7c7761; 
+                background-color: #7c7761; 
+            }
+
+            .right-subscriber form input[type="checkbox"]:checked::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 8px; 
+                height: 8px; 
+                border-radius: 9999px; 
+                background-color: #FFFFFF; 
+                transform: translate(-50%, -50%);
+            }
+
 
         }
 
@@ -162,33 +200,177 @@
         </div>
 
     </header>
+
     <hr class="border-[#2D3246] border-opacity-20">
 
+    <div class="main-blog-area pt-9 pb-16">
+        <section class="blog-hero">
+            <div class="blog-hero-main flex justify-between flex-col md:flex-row pb-14">
+                <div class="blog-left-hero w-full md:w-1/3">
+                    <div class="back-btn">
+                        <a href='' class="back-blog flex justify-start gap-2 text-black text-sm w-28">
+                            <img src="images/prev-arrow.svg" alt="">
+                            <p>Back to Blog</p>
+                        </a>
+                    </div>
 
-    <div class="main-blog-area">
-        <section class="blog-here"></section>
-        <section class="blog-main-content">
-            <div class="blog-item flex justify-between">
-                <div class="left-blog-item flex justify-between">
-                    <div class="blog-item-head flex flex-col justify-between">
-                        <span>Shop</span>
-                        <div class="blog-title-area">
-                            <div class="date-author flex justify-between">
-                                <p>Sep 28, 2023</p>
-                                <p> by Jannie Son</p>
-                            </div>
-                            <h2>Minimalist Living: Declutter Your Life, and Mind</h2>
+                    <h2 class="text-hcolor text-5xl leading-h-lineheight pt-8 pb-7">The Art of
+                        Pottery: A
+                        Journey in
+                        Time and Clay</h2>
+                    <p class="text-h3size text-hcolor pb-20 md:pb-16">Dive into a treasure trove of handmade goodies,
+                        interior design and decoration ideas. Do not forget to subscribe!</p>
+
+                    <div class="social-icon-top">
+                        <span class="text-black text-sm">Share</span>
+                        <div class="icon-list flex gap-3 mt-5">
+                            <a href=""><img src="images/facebook-b.svg" alt="" class="w-4 h-4"></a>
+                            <a href=""><img src="images/twitter-b.svg" alt="" class="w-4 h-4"></a>
+                            <a href=""><img src="images/telegram-b.svg" alt="" class="w-4 h-4"></a>
                         </div>
                     </div>
-                    <div class="blog-item-para">
-                        <p class="item-content-para">Our pottery collections are as diverse as the people who appreciate them. From the rustic charm of our "Earthen Elegance" collection to the vibrant energy of "Colorful Creations,”.</p>
+                </div>
+                <div class="blog-right-hero w-full md:w-2/3 flex justify-end mt-6 md:mt-0">
+                    <img src="images/blog-post-hero.png" alt="">
+                </div>
+            </div>
+            <div class="menu-secondary flex justify-center w-full mb-4">
+                <ul class="flex justify-between items-center gap-3 bg-secondary rounded-full p-4 text-sm text-white">
+                    <li><a href="" class="bg-white text-[#13210e] p-2 rounded-full">Shop</a></li>
+                    <li><a href="" class="bg-[#6b6244] p-2 rounded-full">Cart <span class="product-number">2</span></a>
+                    </li>
+                    <li><a href="" class="p-2 rounded-full">Account</a></li>
+                    <li><a href="" class="p-2 rounded-full">Wishlists</a></li>
+                    <li><a href="" class="p-2 rounded-full">Search</a></li>
+                </ul>
+            </div>
+            <hr class="border-[#2D3246] border-opacity-20">
+        </section>
+
+        <section class="blog-post-content ">
+            <div class="blog-post-wrapper w-full lg:w-2/3 px-5 pt-11">
+                <p class="mb-14 mr-7">When we think of pottery, we often envision beautifully glazed bowls, intricately
+                    designed vases, or charming teacups. But pottery is much more than functional art; it’s a timeless
+                    craft that weaves its way through history, culture, and human expression. In this blog post, we’ll
+                    delve into the world of pottery, exploring its rich heritage and the enduring allure that keeps it
+                    alive today.</p>
+                <h3 class="text-hcolor text-2xl mb-9">Craftsmanship and Tradition</h3>
+                <p class="mb-12 mr-7">Pottery is one of the oldest art forms known to humanity. Archaeological findings suggest that
+                    pottery making dates back to at least 20,000 years ago, with evidence of pottery discovered in caves
+                    and settlements around the world. The ability to shape clay into vessels for storage, cooking, and
+                    artistic expression marked a significant leap in human evolution.
+                    <br> <br>
+                    The art of pottery involves a meticulous process that demands skill, patience, and a deep
+                    understanding of materials. It begins with the selection of clay, a versatile medium that, when
+                    fired, transforms into a durable and functional form. The shaping, glazing, and firing processes
+                    each play a crucial role in the creation of pottery.
+                    <br> <br>
+                    Throughout history, various cultures have developed their unique pottery traditions, each with
+                    distinct styles and techniques. From the delicate porcelain of China to the rustic earthenware of
+                    Europe, pottery reflects the cultural and artistic diversity of our world.
+                    <br> <br> <br>
+
+                    As I ventured into the realm of clay, I discovered a passion that would become a lifelong companion.
+                    I began my formal education at [Name of Art School or Pottery Studio], where I learned the
+                    foundations of pottery, from wheel throwing to hand-building techniques. Under the tutelage of
+                    [Influential Potter’s Name], I was exposed to the rich world of pottery traditions and innovations.
+                </p>
+                <img src="images/blog-post-in.png" alt="" class="w-full">
+
+                <h3 class="text-hcolor text-2xl mb-9 mt-14">The Ancient Origins</h3>
+                <p class="mr-7">One of the most charming aspects of pottery is its embrace of imperfection. Unlike mass-produced
+                    items, handcrafted pottery celebrates the unique quirks and variations that occur in the creative
+                    process. The human touch of the potter’s hand, the natural variations in glaze, and the occasional
+                    unexpected crack or streak of color all add to the character and beauty of each piece.
+                    <br> <br>
+                    When we think of pottery, we often envision beautifully glazed bowls, intricately designed vases, or
+                    charming teacups. But pottery is much more than functional art; it’s a timeless craft that weaves
+                    its way through history, culture, and human expression. In this blog post, we’ll delve into the
+                    world of pottery, exploring its rich heritage and the enduring allure that keeps it alive today.
+
+                </p>
+                <h3 class="text-hcolor text-2xl mb-9 mt-14">Creating Your Own Pottery</h3>
+                <p class="mr-7 mb-9">Today, pottery continues to thrive as an art form and a practical craft. Whether you’re enjoying a
+                    homemade meal served on hand-thrown dinnerware, sipping tea from a beautifully glazed mug, or using
+                    a pottery piece as a decorative element in your home, you’re part of the enduring tradition of
+                    pottery appreciation.
+                    <br> <br>
+                    For those intrigued by the art of pottery, many studios and workshops offer hands-on experiences
+                    where you can shape, glaze, and fire your own creations. It’s a way to connect with this ancient art
+                    form, express your creativity, and appreciate the craftsmanship that goes into each piece.
+                    <br> <br>
+                    When we think of pottery, we often envision beautifully glazed bowls, intricately designed vases, or
+                    charming teacups. But pottery is much more than functional art; it’s a timeless craft that weaves
+                    its way through history, culture, and human expression. In this blog post, we’ll delve into the
+                    world of pottery, exploring its rich heritage and the enduring allure that keeps it alive today.
+
+                </p>
+                <div class="quotes-area border-l-[3px] border-black mb-14 pl-9">
+                    <h4 class="text-hcolor text-2xl mb-2">“I’ve been on a lifelong quest to find the perfect skincare routine, and I finally found it with Swiss.</h4>
+                    <p class="text-[18px] text-black">Alex S.</p>
+                </div>
+                <div class="related-post flex flex-col md:flex-row justify-between border border-[#707070] border-opacity-15 rounded-3xl p-5 md:p-10 gap-5">
+                    <img src="images/blog-rel-post.png" alt="">
+                    <div class="post-content ml-0 md:ml-14 ">
+                        <span class="text-black text-xs">RELATED post</span>
+                        <h2 class="text-[32px] text-[#223F3C] leading-10 mt-7">Minimalist Living: Declutter Your Life, and Mind</h2>
                     </div>
                 </div>
-                <div class="right-blog-item">
-                    <img src="images/blog-1.png" alt="">
+                <p class="mt-14 mb-16">Pottery is more than just a functional craft; it’s a testament to human creativity, history, and
+                    tradition. From its ancient origins to its enduring appeal in the modern world, pottery continues to
+                    captivate us with its beauty and authenticity.</p>
+                <h3 class="text-hcolor text-2xl mb-7">In Conclusion</h3>
+                <p class="mb-24"> Whether you’re an enthusiast, a collector, or someone curious to try your hand at the wheel, pottery
+                    invites you to explore the rich tapestry of human expression through art and craftsmanship. So, the
+                    next time you sip tea from a handcrafted mug or admire a beautifully glazed vase, take a moment to
+                    appreciate the enduring allure of pottery and the stories it tells.</p>
+                <div class="second-quote mb-28 flex justify-between items-center">
+                    <img src="images/avatar.svg" alt="">
+                    <div class="author text-sm text-black ml-10">
+                        <p class="mb-2">Maria Chang</p>
+                        <p>I am a passionate blog writer with years of experience in the field, I have honed my skills
+                            in fashion and health. My journey in fashion has allowed me to win international awards that
+                            I can’t even count!</p>
+                    </div>
+                </div>
+                <div class="mb-20 flex justify-between">
+                    <div class="content-wrapper">
+                        <img src="" alt="">
+                        <h3 class="text-[18px] text-black">How Sustainable Practices
+                            Are Shaping the Future</h3>
+                    </div>
+                    <img src="images/repeat-grid.svg" alt="" class="mx-5">
+                    <div class="content-wrapper">
+                        <h3 class="text-[18px] text-black">How to Start Your Own
+                            Small Pottery Business</h3>
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div
+                    class="subscriber-wrapper flex flex-col md:flex-row justify-between border border-[#707070] border-opacity-15 rounded-3xl p-10">
+                    <div class="left-subscriber flex flex-col-reverse md:flex-row justify-start items-center gap-3">
+                        <div class="subscriber-head w-full md:w-3/5">
+                            <h2 class="text-[32px] text-[#223F3C] pb-2 leading-10">Subscibe to
+                                our newsletter.</h2>
+                            <p class="text-black text-sm">Subscribe to our newsletter and be the first to know about
+                                promotions, new product launches, and decoration ideas.</p>
+                        </div>
+                        <img src="images/mail.svg" alt="">
+                    </div>
+                    <div class="right-subscriber w-full flex justify-end">
+                        <form action="" class="w-full">
+                            <input type="email" name="" id="" placeholder="Enter your email address"
+                                class="my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-black text-sm">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="accent-[#7c7761]">
+                                <span>I agree to terms and services.</span>
+                            </label>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
+
     </div>
 
     <!-- Footer start -->
