@@ -24,7 +24,8 @@
                         radiocolor3: '#a4ba91',
                         bgmenu: '#e3ddc8',
                         footertext: '#e8e3cc',
-                        bgfooter: '#4d4733'
+                        bgfooter: '#4d4733',
+                        homebg: '#F5F1E7'
                     },
                     lineHeight: {
                         'body-lineheight': '21px',
@@ -32,13 +33,19 @@
                     },
                     fontSize: {
                         hsize: '45px',
-                        h3size: '18px'
+                        h3size: '18px',
+                        extrasm: '13px',
+                        extralarge: '55px',
                     },
                     width: {
                         wradio: '18px'
                     },
                     height: {
                         hradio: '18px'
+                    },
+                    backgroundImage: {
+                        'shop-category': "url('images/shop-line.svg')",
+                        'on-sale': "url('images/onsale-bg.png')"
                     }
                 }
             }
@@ -67,7 +74,7 @@
                 font-family: "Gill Sans";
             }
         
-            h2, .faqs li button span{
+            h2, h3, h4, .faqs li button span{
                 font-family: 'cooper-lt-bt', sans-serif;
             }
         
@@ -122,7 +129,7 @@
             .footer-form-area form input[type="checkbox"] {
                 width: 16px; 
                 height: 16px; 
-                border-radius: 9999px; 
+                border-radius: 2px; 
                 border: 2px solid #7c7761; 
                 background-color: transparent; 
                 display: inline-block;
@@ -137,15 +144,14 @@
             }
 
             .footer-form-area form input[type="checkbox"]:checked::after {
-                content: '';
+                content: '\2713';
                 display: block;
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 8px; 
-                height: 8px; 
+                top: 0;
+                left: 25%;
+                width: 5px; 
+                height: 5px; 
                 border-radius: 9999px; 
-                background-color: #FFFFFF; 
                 transform: translate(-50%, -50%);
             }
 
@@ -163,12 +169,19 @@
     <!-- Header Start -->
     <header class="main-header mt-3">
         <div
-            class="header-promotional flex justify-between bg-bgmenu p-3 rounded-full text-[13px] items-center mb-4 text-black">
-            <div class="language">
-                <p class="">English - USD</p>
+            class="header-promotional flex justify-between bg-bgmenu p-3 rounded-full text-extrasm items-center mb-4 text-black">
+            <div class="language flex justify-center items-center">
+                <p class="">English -</p>
+                <select name="currency" id="" class="bg-transparent focus-outline:none text-sm text-[#292929]">
+                    <option value="" selected="">USD</option>
+                    <option value="" >Euro</option>
+                    <option value="" >Taka</option>
+                </select>
             </div>
-            <div class="promotional-text">
+            <div class="promotional-text flex justify-between items-center gap-3">
+                <img src="images/chevron-left-solid.svg" alt="" class="w-3 h-3">
                 <p>Final Reductions on the up to 30 - Off Sale</p>
+                <img src="images/chevron-right-solid.svg" alt="" class="w-3 h-3">
             </div>
             <div class="social-icon flex justify-between gap-2">
                 <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
@@ -194,12 +207,26 @@
     <div class="product-main">
         <!-- Product Details -->
         <section class="product-details mb-20">
+            <div class="back flex items-center gap-3 mb-3">
+                <img src="images/prev-arrow.svg" alt="">
+                <span>Back to Shop</span>
+            </div>
+
             <div class="product-details-head flex flex-col lg:flex-row">
                 <div class="product-img flex-1 flex justify-center product-img w-full lg:w-2/3 relative">
+                    
                     <a href="#"
-                        class="mb-6 flex items-center gap-2 absolute top-0 left-0 ml-7 lg:ml-14 mt-3 lg:mt-5 z-10">
-                        <img src="images/icon-2.svg" alt="">
-                        <span>Back to Shop</span>
+                        class="mb-6 flex items-center gap-2 absolute top-0 left-0 ml-7 lg:ml-7 mt-3 lg:mt-8 z-10">
+                        <!-- <img src="images/icon-2.svg" alt=""> -->
+                        <!-- <span>Back to Shop</span> -->
+                        <div class="slider-btn-area flex justify-between items-center space-x-1 md:space-x-4">
+                            <img src="images/left-arrow.svg" alt="" class="left-arrow cursor-pointer w-4 h-4">
+                            <div class="w-20 h-2 bg-[#979797] rounded-full">
+                                <div class="w-1/3 h-full text-center text-xs text-white bg-black rounded-full">
+                                </div>
+                            </div>
+                            <img src="images/right-arrow.svg" alt="" class="right-arrow cursor-pointer w-4 h-4">
+                        </div>
                     </a>
                     <div class="menu-secondary absolute bottom-0 right-0 mb-[10%] mr-[5%] hidden md:block">
                         <ul
@@ -234,21 +261,21 @@
 
                     <div class="product-variation flex items-center space-x-2 mb-8">
                         <label class="radio-item block relative py-0 px-6  text-2xl cursor-pointer">
-                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <input type="radio" name="radiom" class="absolute opacity-0 cursor-pointer">
                             <span
                                 class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
                         </label>
                         <label class="radio-item block relative py-0 px-6  text-2xl cursor-pointer">
-                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer" checked>
+                            <input type="radio" name="radiom" class="absolute opacity-0 cursor-pointer" checked>
                             <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
                         </label>
                         <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <input type="radio" name="radiom" class="absolute opacity-0 cursor-pointer">
                             <span
                                 class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
                         </label>
                         <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <input type="radio" name="radiom" class="absolute opacity-0 cursor-pointer">
                             <span
                                 class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
                         </label>
@@ -261,19 +288,19 @@
                         <option value="">Ceramic</option>
                     </select>
 
+                    <div class="payment flex justify-between text-sm mb-4">
+                        <p>Pay in 4 installments.</p>
+                        <a href=""><img src="images/shoppay.svg" alt=""></a>
+                    </div>
+
+                    <hr class="border-brcolor mb-6">
+
                     <div class="product-stock flex justify-between text-sm mb-4">
                         <div class="flex flex-1 justify-start">
                             <img src="images/clock-1.svg" alt="" class="mr-2">
                             <p>3 in stock.</p>
                         </div>
                         <a href="#">Find in a Nearby Store</a>
-                    </div>
-
-                    <hr class="border-brcolor mb-6">
-
-                    <div class="payment flex justify-between text-sm mb-4">
-                        <p>Pay in 4 installments.</p>
-                        <a href=""><img src="images/shoppay.svg" alt=""></a>
                     </div>
 
                     <button class="addto-cart-btn bg-secondary text-btntext py-3.5 rounded mb-6 w-full rounded-3xl">Add
@@ -295,7 +322,7 @@
 
                     <div class="flex justify-between mt-3.5 mb-3.5">
                         <h4>Description</h4>
-                        <img src="images/icon.svg" alt="">
+                        <img src="images/chevron-up-solid.svg" alt="" class="w-3 h-3">
                     </div>
 
                     <p class="product-desc mb-5">Our artisans are masters of their craft, with years of experience and
@@ -304,7 +331,7 @@
                     <hr class="border-brcolor">
                     <div class="product-shipping flex justify-between my-5">
                         <h4>Shipping and Returns</h4>
-                        <img src="images/icon.svg" alt="">
+                        <img src="images/chevron-down.svg" alt="" class="w-3 h-3">
                     </div>
 
                     <hr class="border-brcolor">
@@ -325,7 +352,7 @@
                         </li>
                         <li class="me-2">
                             <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg">Reviews
-                                <span class="bg-secondary rounded-xl text-white py-1.5 px-2">45</span></a>
+                                <span class="bg-secondary rounded-xl text-white py-1.5 px-2 ml-3">45</span></a>
                         </li>
                     </ul>
                 </div>
@@ -398,7 +425,7 @@
                             aria-expanded="false" onclick="toggleFAQ(this)">
                             <span class="flex-1 text-[27px] font-light leading-8">Do you offer custom pottery
                                 creations?</span>
-                            <img src="images/plus.svg" alt="">
+                            <img src="images/chevron-down.svg" alt="" class="w-3 h-3">
                         </button>
                         <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                             style="transition: max-height 0.3s ease-in-out 0s;">
@@ -416,7 +443,7 @@
                             aria-expanded="false" onclick="toggleFAQ(this)">
                             <span class="flex-1 text-[27px] font-light leading-8">What is your return and exchange
                                 policy?</span>
-                            <img src="images/plus.svg" alt="">
+                            <img src="images/chevron-down.svg" alt="" class="w-3 h-3">
                         </button>
                         <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                             style="transition: max-height 0.3s ease-in-out 0s;">
@@ -431,7 +458,7 @@
                         <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
                             aria-expanded="false" onclick="toggleFAQ(this)">
                             <span class="flex-1 text-[27px] font-light leading-8">How do I track my order?</span>
-                            <img src="images/plus.svg" alt="">
+                            <img src="images/chevron-down.svg" alt="" class="w-3 h-3">
                         </button>
                         <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                             style="transition: max-height 0.3s ease-in-out 0s;">
@@ -448,7 +475,7 @@
                         <button class="relative flex gap-2 items-center w-full py-5 text-left lg:text-lg"
                             aria-expanded="false" onclick="toggleFAQ(this)">
                             <span class="flex-1 text-[27px] font-light leading-8">Do you ship internationally?</span>
-                            <img src="images/plus.svg" alt="">
+                            <img src="images/chevron-down.svg" alt="" class="w-3 h-3">
                         </button>
                         <div class="transition-all duration-300 ease-in-out max-h-0 overflow-hidden"
                             style="transition: max-height 0.3s ease-in-out 0s;">
@@ -466,7 +493,7 @@
         </section>
 
         <!-- Why Swiss -->
-        <section class="why-swiss">
+        <section class="why-swiss mt-20">
             <h2 class="why-swiss-head text-hsize font-light text-hcolor leading-h-lineheight text-left mb-9 mt-3">Why
                 Swiss</h2>
             <div class="why-swiss-img flex flex-col md:flex-row justify-center lg:justify-between gap-3">
@@ -542,40 +569,178 @@
                 be interested in
             </h2>
             <div class="rel-pr-content flex flex-col md:flex-row justify-between gap-2">
-                <div class="rel-item mb-10 lg:mb-0">
-                    <img src="images/product-image-4.png" alt="">
-                    <p class="mt-4 mb-1 text-[15px] text-black">Serving Platter</p>
-                    <p class="text-[13px] text-black">$27.30</p>
-                </div>
-                <div class="rel-item mb-10 lg:mb-0">
-                    <img src="images/product-image-9.png" alt="">
-                    <p class="mt-4 mb-1 text-[15px] text-black">Hand-Painted Vase</p>
-                    <p class="text-[13px] text-black">$27.30</p>
-                </div>
-                <div class="rel-item mb-10 lg:mb-0">
-                    <img src="images/product-image-10.png" alt="">
-                    <p class="mt-4 mb-1 text-[15px] text-black">Teacup Set</p>
-                    <p class="text-[13px] text-black">$27.30</p>
-                </div>
-            </div>
 
-            <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
-                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
-                    <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
-                </label>
-                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer" checked>
-                    <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
-                </label>
-                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
-                    <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
-                </label>
-                <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
-                    <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
-                    <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
-                </label>
+                <div class="rel-item mb-8 lg:mb-0 relative">
+                    <div class="group relative">
+                        <img src="images/product-image-4.png" alt="">
+                        <div class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible group-hover:translate-y-0 bottom-0 mb-6 w-full">
+                        <div class="flex justify-between space-x-3 px-5">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                        </div>
+                            
+                            <button
+                                class="bg-secondary 
+                            text-white w-10/12 rounded-full p-4 text-extrasm text-white ml-10 mt-5">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out visible
+                        group-hover:invisible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Sale 20%</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Bathroom Set</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+
+                    <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer" checked>
+                            <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio1" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rel-item mb-8 lg:mb-0 relative">
+                    <div class="group relative">
+                        <img src="images/product-image-9.png" alt="">
+                        <div class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible group-hover:translate-y-0 bottom-0 mb-6 w-full">
+                        <div class="flex justify-between space-x-3 px-5">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                        </div>
+                            
+                            <button
+                                class="bg-secondary 
+                            text-white w-10/12 rounded-full p-4 text-extrasm text-white ml-10 mt-5">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out visible
+                        group-hover:invisible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Sale 20%</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Bathroom Set</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+
+                    <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer" checked>
+                            <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio2" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rel-item mb-8 lg:mb-0 relative">
+                    <div class="group relative">
+                        <img src="images/product-image-10.png" alt="">
+                        <div class="transition transform 
+                        translate-y-1 ease-in-out invisible 
+                        absolute group-hover:visible group-hover:translate-y-0 bottom-0 mb-6 w-full">
+                        <div class="flex justify-between space-x-3 px-5">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                            <hr class="border-[#707070] w-1/3 border-2 opacity-25 hover:opacity-100 cursor-pointer">
+                        </div>
+                            
+                            <button
+                                class="bg-secondary 
+                            text-white w-10/12 rounded-full p-4 text-extrasm text-white ml-10 mt-5">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out invisible 
+                        group-hover:visible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Limited
+                                Edition</p>
+                            <img src="images/heart-1.svg" alt="" class="wishlist-shop cursor-pointer">
+                        </div>
+
+                        <div class="absolute top-0 flex justify-between transition transform 
+                        -translate-y-2 ease-in-out visible
+                        group-hover:invisible group-hover:translate-y-0 mt-6 mr-5 w-full px-5">
+                            <p class="bg-[#d0baac] text-black text-sm rounded-full p-1">Sale 20%</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 mb-1 text-[15px] text-black">Bathroom Set</p>
+                    <p class="text-extrasm text-black">$27.30</p>
+
+                    <div class="product-slider-btn flex items-center space-x-2 mb-8 mt-4">
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio3" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor1 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio3" class="absolute opacity-0 cursor-pointer" checked>
+                            <span class="check bg-black absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio3" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor2 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                        <label class="radio-item block relative py-0 px-6 text-2xl cursor-pointer">
+                            <input type="radio" name="radio3" class="absolute opacity-0 cursor-pointer">
+                            <span class="check bg-radiocolor3 absolute top-0 left-0 h-hradio w-wradio rounded-full"></span>
+                        </label>
+                    </div>
+                </div>
+
             </div>
         </section>
     </div>
@@ -592,13 +757,23 @@
                     <a href=""><img src="images/logo.svg" alt=""></a>
                     <div class="footer-form-area">
                         <form action="">
-                            <input type="email" name="" id="" placeholder="Enter your email address"
-                                class="my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext">
+                            <div class="relative">
+                                <input type="email" name="" id="" placeholder="Enter your email address"
+                                class="relative my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext focus:outline-none"> 
+                                <div class=" absolute right-0 bottom-12">
+                                    <img src="images/chevron-right-w.svg" alt="" class="w-3 h-3 ">
+                                </div>
+                            </div>
+
                             <label class="flex items-center space-x-2">
                                 <input type="checkbox" class="accent-[#7c7761]">
                                 <span>I agree to terms and services.</span>
                             </label>
                         </form>
+                        <div class="info flex flex-col justify-start lg:flex-row gap-5 item-start lg:items-center my-10">
+                            <p class="border border-footertext rounded-full py-2 px-4">+423 873 90 12</p>
+                            <p class="border border-footertext rounded-full py-2 px-4">info@swiss.com</p>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-contact flex flex-col w-1/2 md:w-1/5 pl-8 pb-11 md:pl-12 lg:pl-24">
@@ -627,19 +802,25 @@
                 </div>
             </div>
             <hr class="border-footertext">
-            <div class="footer-secondary flex justify-between items-center flex-wrap p-8 md:p-11">
-                <div class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] w-1/2 md:w-1/3">
+            <div class="footer-secondary flex flex-col md:flex-row justify-between items-center">
+                <div class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] border-r-0 md:border-r border-r-footertext p-8 md:p-11">
                     <img src="images/internet.svg" alt="">
-                    <p>English <span class="bg-[#7c7761] rounded-3xl p-1 text-[11px] ">USD</span></p>
+                    <p>English </p>
+
+                    <select name="currency" id="" class="bg-[#7c7761] rounded-3xl p-1 focus-outline:none text-[11px] text-[#fffaf4]">
+                        <option value="" selected="">USD</option>
+                        <option value="" >Euro</option>
+                        <option value="" >Taka</option>
+                    </select>
                 </div>
                 <div
-                    class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center w-1/2 md:w-1/3">
+                    class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center">
                     <a href=""><img src="images/linkedin-1.svg" alt="" class="w-4 h-4"></a>
                     <a href=""><img src="images/twitter-1.svg" alt="" class="w-4 h-4"></a>
                     <a href=""><img src="images/instagram-2.svg" alt="" class="w-4 h-4"></a>
                 </div>
                 <div
-                    class="footer-payment flex items-center justify-center md:justify-end pt-4 md:pt-0 w-full md:w-1/3">
+                    class="footer-payment flex items-center justify-center md:justify-end border-l-0 md:border-l border-l-footertext p-8 md:p-11">
                     <a href=""><img src="images/Payment.svg" alt=""></a>
                 </div>
             </div>
