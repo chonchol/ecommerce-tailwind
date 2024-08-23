@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter</title>
+    <title>Sidebar Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -165,51 +165,36 @@
 <!-- body start -->
 
 <body
-    class="bg-homebg text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
+    class="bg-secondary text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto">
 
-    <!-- Newsletter Page -->
-    <div class="newsletter-main w-full">
-        <div class="max-w-2xl flex flex-col md:flex-row absolute right-6 bottom-8 w-full">
-            <div class="w-2/5 bg-[url(images/newsletter.png)]">
+    <div class="max-w-sm ml-5 md:ml-16 h-screen flex flex-col justify-between ">
+        <!-- <div class="sidebar-wrapper mt-10"> -->
+            <div class="top-menu mt-10">
+                <div class="flex justify-end">
+                    <img src="images/close-primary.svg" alt="">
+                </div>
+                <ul class="text-[28px] text-white leading-h-lineheight mt-8 mb-12 border-b-2 border-white border-opacity-15 uppercase">
+                    <li class="mb-4 flex gap-3"><a href="">Kitchen</a><span class="text-sm">12</span></li>
+                    <li class="mb-4 flex gap-3"><a href="" class="">Storage</a><span class="text-sm">46</span></li>
+                    <li class="mb-4 flex gap-3"><a href="">Ceramics</a><span class="text-sm">25</span></li>
+                    <li class="mb-4 flex gap-3"><a href="">Living Room</a><span class="text-sm">11</span></li>
+                    <li class="mb-4 flex gap-3"><a href="">Cutlery</a><span class="text-sm">08</span></li>
+                </ul>
             </div>
-            <div class="subscriber-area w-3/5">
-                <div class="subscriber-wrapper border border-[#707070] border-opacity-15 rounded-3xl p-6 rounded-s-none">
-                    <!-- <div class="left-subscriber flex flex-col-reverse justify-start items-start gap-3"> -->
-                        <div class="icon flex justify-between items-start">
-                            <img src="images/mail.svg" alt="" class="w-20">
-                            <a href=""><img src="images/close.svg" alt=""></a>
-                        </div>
-                        <div class="subscriber-head w-full">
-                            <h2 class="text-[21px] text-black pb-2 leading-10">Subscibe to
-                                our newsletter.</h2>
-                            <p class="text-black text-sm">Subscribe to our newsletter and be the first to know about promotions, new product launches, and decoration ideas.</p>
-                        </div>
-
-                        
-                    <!-- </div>
-                    <div class="right-subscriber w-full"> -->
-                        <form action="" class="w-full">
-                                <div class="relative">
-                                    <input type="email" name="" id="" placeholder="Enter your email address"
-                                    class="my-5 py-3 w-full border-b border-[#707070] bg-transparent placeholder:text-black text-[8px] border-b-opacity-15 focus:outline-none">
-    
-                                    <div class="absolute right-0 bottom-9">
-                                        <button class="bg-black px-2 py-1 rounded-full"> <img src="images/chevron-right-w.svg" alt="" class="w-3 h-3 "></button>
-                                    </div>
-                                </div>
-                            <label class="flex items-center space-x-2 text-[8px]">
-                                <input type="checkbox" class="accent-[#7c7761]">
-                                <span>I agree to terms and services.</span>
-                            </label>
-                        </form>
-                    <!-- </div> -->
+            <div class="bottom-menu mb-10">
+                <ul class="text-[#f7f4ed] text-sm">
+                    <li class="mb-5"><a href="">Wishlist</a></li>
+                    <li class="mb-5"><a href="">Track Your Order</a></li>
+                    <li class="mb-5"><a href="">Privacy Policy</a></li>
+                </ul>
+                <div class="social-icon flex space-x-5 mt-10">
+                    <a href=""><img src="images/facebook-brands-p.svg" alt="" class="w-6 h-6"></a>
+                    <a href=""><img src="images/pinterest-brands-p.svg" alt="" class="w-6 h-6"></a>
+                    <a href=""><img src="images/instagram-brands-p.svg" alt="" class="w-6 h-6"></a>
                 </div>
             </div>
-
-        </div>
+        <!-- </div> -->
     </div>
-
-    <!-- Footer start -->
 
 </body>
 
