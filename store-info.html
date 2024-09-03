@@ -155,6 +155,35 @@
                 transform: translate(-50%, -50%);
             }
 
+            
+            .location-item input[type="checkbox"] {
+                appearance: none;
+                background-color: transparent; 
+                border: 2px solid #cbcbcb; 
+                width: 16px; 
+                height: 16px; 
+                cursor: pointer; 
+                border-radius: 1px;
+            }
+
+            .location-item input[type="checkbox"]:checked {
+                background-color: transparent;
+                border-color: #707070;
+                position: relative;
+            }
+
+            .location-item input[type="checkbox"]:checked::after {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 4px;
+                width: 5px;
+                height: 11px;
+                border: solid #707070;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+
 
         }
 
@@ -182,7 +211,7 @@
                         <div class="location-item flex justify-between border-b border-[#707070] border-opacity-15 pb-5">
                             <div class="flex items-start gap-5">
                                 <!-- <label class="flex items-center space-x-2"> -->
-                                    <input type="checkbox" class="accent-[#7c7761] border-[#707070] bg-transparent mt-1 w-4 h-4">
+                                    <input type="checkbox" class="accent-[#7c7761] mt-1">
                                 <!-- </label> -->
                                 <div>
                                     <p class="text-[18px] text-black">Ohio Warehouse</p>

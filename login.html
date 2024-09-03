@@ -155,6 +155,34 @@
                 transform: translate(-50%, -50%);
             }
 
+            .login-wrapper form input[type="checkbox"] {
+                appearance: none;
+                background-color: transparent; 
+                border: 2px solid #cbcbcb; 
+                width: 16px; 
+                height: 16px; 
+                cursor: pointer; 
+                border-radius: 1px;
+            }
+
+            .login-wrapper form input[type="checkbox"]:checked {
+                background-color: transparent;
+                border-color: #707070;
+                position: relative;
+            }
+
+            .login-wrapper form input[type="checkbox"]:checked::after {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 4px;
+                width: 5px;
+                height: 11px;
+                border: solid #707070;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+
 
         }
 
@@ -165,7 +193,7 @@
 <!-- body start -->
 
 <body
-    class="bg-homebg text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
+    class="bg-[#EEECDB] text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Header Start -->
     <header class="main-header mt-3">
@@ -220,7 +248,12 @@
                         class="my-3 py-4 w-full border-0 border-b-2 border-[#707070] bg-transparent placeholder:text-black text-sm border-opacity-15 focus:outline-none">
 
                     <div class="absolute right-0 bottom-6">
-                        <button class="px-2"> <img src="images/eye.svg" alt="" class="w-6 h-6 "></button>
+                        <svg id="eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path id="Path_141798" data-name="Path 141798" d="M0,0H24V24H0Z" fill="none"/>
+                            <path id="Path_141799" data-name="Path 141799" d="M12,12m-2,0a2,2,0,1,0,2-2,2,2,0,0,0-2,2" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                            <path id="Path_141800" data-name="Path 141800" d="M22,12q-4,7-10,7T2,12Q6,5,12,5t10,7" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                          </svg>
+                        <!-- <button class="px-2"> <img src="images/eye.svg" alt="" class="w-6 h-6 "></button> -->
                     </div>
                 </div>
                 <div class="flex justify-between my-7">

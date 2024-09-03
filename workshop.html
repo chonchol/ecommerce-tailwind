@@ -120,42 +120,32 @@
                 transform: translate(-50%, -50%);
             }
 
-            
 
             .right-subscriber form input[type="checkbox"] {
                 appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-            }
-
-            .right-subscriber form input[type="checkbox"] {
+                background-color: transparent; 
+                border: 2px solid #707070; 
                 width: 16px; 
                 height: 16px; 
-                border-radius: 9999px; 
-                border: 2px solid #7c7761; 
-                background-color: transparent; 
-                display: inline-block;
-                position: relative;
-                cursor: pointer;
-                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                cursor: pointer; 
             }
 
             .right-subscriber form input[type="checkbox"]:checked {
-                border-color: #7c7761; 
-                background-color: #7c7761; 
+                background-color: transparent;
+                border-color: #707070;
+                position: relative;
             }
 
             .right-subscriber form input[type="checkbox"]:checked::after {
                 content: '';
-                display: block;
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 8px; 
-                height: 8px; 
-                border-radius: 9999px; 
-                background-color: #FFFFFF; 
-                transform: translate(-50%, -50%);
+                top: 0px;
+                left: 4px;
+                width: 5px;
+                height: 11px;
+                border: solid #707070;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
             }
 
 
@@ -168,7 +158,7 @@
 <!-- body start -->
 
 <body
-    class="bg-homebg text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
+    class="bg-[#EEECDB] text-primary text-base font-normal leading-body-lineheight not-italic container mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Header Start -->
     <header class="main-header mt-3">
@@ -178,8 +168,8 @@
                 <p class="">English -</p>
                 <select name="currency" id="" class="bg-transparent focus-outline:none text-sm text-[#292929]">
                     <option value="" selected="">USD</option>
-                    <option value="" >Euro</option>
-                    <option value="" >Taka</option>
+                    <option value="">Euro</option>
+                    <option value="">Taka</option>
                 </select>
             </div>
             <div class="promotional-text flex justify-between items-center gap-3">
@@ -212,10 +202,11 @@
     <div class="main-workshop-area pt-9 pb-16">
         <section class="workshop-hero">
             <div class="workshop-hero-main flex justify-between flex-col md:flex-row pb-14">
-                <div class="workshop-left-hero w-full md:w-1/3 pt-0 md:pt-10">
+                <div class="workshop-left-hero w-full md:w-1/3 pt-0 md:pt-10 pr-0 md:pr-10 lg:pr-28">
                     <img src="images/calender.svg" alt="">
                     <h2 class="text-hcolor text-5xl leading-h-lineheight pt-10 pb-7">Workshop & Meet-ups</h2>
-                    <p class="text-h3size text-hcolor pb-8 md:pb-16">Join us for hands-on workshops and classes where you can learn the art of shaping clay into beautiful pottery.</p>
+                    <p class="text-h3size text-hcolor pb-8 md:pb-16">Join us for hands-on workshops and classes where
+                        you can learn the art of shaping clay into beautiful pottery.</p>
                     <ul class="pt-2 ml-3">
                         <li class="list-disc text-h3size text-hcolor leading-5">
                             <a href="" class="">View Calendar</a>
@@ -244,17 +235,20 @@
                         class="product-tabs-menu text-sm font-medium text-center text-[#262626] border-b border-[#3737381a]">
                         <ul class="flex flex-wrap">
                             <li class="me-2">
-                                <a href="#" class="inline-block py-4 px-8 border-b-2 border-[#373738] rounded-t-lg active"
+                                <a href="#"
+                                    class="inline-block py-4 px-8 border-b-2 border-[#373738] rounded-t-lg active"
                                     aria-current="page">New</a>
                             </li>
                             <li class="me-2">
                                 <a href="#"
-                                    class="inline-block py-4 px-8 border-b-2 border-transparent rounded-t-lg">Past Events</a>
+                                    class="inline-block py-4 px-8 border-b-2 border-transparent rounded-t-lg">Past
+                                    Events</a>
                             </li>
                         </ul>
                     </div>
                     <div class="tab-details mt-9">
-                        <div class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-3xl p-5 md:p-7 gap-5 mb-5">
+                        <div
+                            class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-xl p-5 md:p-6 gap-5 mb-5">
                             <div class="event-img w-full md:w-1/3">
                                 <img src="images/workshop-1.png" alt="">
                             </div>
@@ -272,9 +266,10 @@
                                         <a href=""><img src="images/heart-1.svg" alt=""></a>
                                     </div>
                                 </div>
-                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Minimalist Living: Declutter Your Life, and Mind</h2>
-                               <hr class="border-[#2D3246] border-opacity-20">
-                               <div class="workshop-bottom flex justify-between mt-5">
+                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Minimalist Living:
+                                    Declutter Your Life, and Mind</h2>
+                                <hr class="border-[#2D3246] border-opacity-20">
+                                <div class="workshop-bottom flex justify-between mt-5">
                                     <div class="left-area flex justify-between items-start gap-3">
                                         <img src="images/clock-1.svg" alt="" class="mt-1">
                                         <div class="time-details">
@@ -289,14 +284,15 @@
                                         <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
                                         <a href=""><img src="images/twitter-b.svg" alt="" class="w-4 h-4"></a>
                                     </div>
-                               </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-3xl p-5 md:p-7 gap-5 mb-5">
+                        <div
+                            class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-xl p-5 md:p-6 gap-5 mb-5">
                             <div class="event-img w-full md:w-1/3">
                                 <img src="images/workshop-2.png" alt="">
                             </div>
-                            
+
                             <div class="workshop-content ml-0 md:ml-9 w-full md:w-3/5">
                                 <div class="product-reviews flex justify-between">
                                     <div class="icon flex items-center">
@@ -311,9 +307,10 @@
                                         <a href=""><img src="images/heart-1.svg" alt=""></a>
                                     </div>
                                 </div>
-                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Ceramic Workshop In Zurich</h2>
-                               <hr class="border-[#2D3246] border-opacity-20">
-                               <div class="workshop-bottom flex justify-between mt-5">
+                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Ceramic Workshop In Zurich
+                                </h2>
+                                <hr class="border-[#2D3246] border-opacity-20">
+                                <div class="workshop-bottom flex justify-between mt-5">
                                     <div class="left-area flex justify-between items-start gap-3">
                                         <img src="images/clock-1.svg" alt="" class="mt-1">
                                         <div class="time-details">
@@ -328,10 +325,11 @@
                                         <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
                                         <a href=""><img src="images/twitter-b.svg" alt="" class="w-4 h-4"></a>
                                     </div>
-                               </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-3xl p-5 md:p-7 gap-5">
+                        <div
+                            class="related-workshop flex flex-col md:flex-row justify-start border border-[#707070] border-opacity-15 rounded-xl p-5 md:p-6 gap-5">
                             <div class="event-img w-full md:w-1/3">
                                 <img src="images/workshop-3.png" alt="">
                             </div>
@@ -349,9 +347,10 @@
                                         <a href=""><img src="images/heart-1.svg" alt=""></a>
                                     </div>
                                 </div>
-                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Friendly meet-up In London</h2>
-                               <hr class="border-[#2D3246] border-opacity-20">
-                               <div class="workshop-bottom flex justify-between mt-5">
+                                <h2 class="text-[32px] text-[#223F3C] leading-10 mt-3 mb-28">Friendly meet-up In London
+                                </h2>
+                                <hr class="border-[#2D3246] border-opacity-20">
+                                <div class="workshop-bottom flex justify-between mt-5">
                                     <div class="left-area flex justify-between items-start gap-3">
                                         <img src="images/clock-1.svg" alt="" class="mt-1">
                                         <div class="time-details">
@@ -366,7 +365,7 @@
                                         <a href=""><img src="images/pinterest-1.svg" alt="" class="w-4 h-4"></a>
                                         <a href=""><img src="images/twitter-b.svg" alt="" class="w-4 h-4"></a>
                                     </div>
-                               </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -375,25 +374,28 @@
         </section>
 
         <section class="subscriber-area mt-16">
-            <div class="subscriber-wrapper flex flex-col md:flex-row justify-between border border-[#707070] border-opacity-15 rounded-3xl p-6 lg:p-10">
+            <div
+                class="subscriber-wrapper flex flex-col md:flex-row justify-between border border-[#707070] border-opacity-15 rounded-xl p-6 lg:p-10">
                 <div class="left-subscriber flex flex-col-reverse md:flex-row justify-start items-center gap-3">
                     <div class="subscriber-head w-full md:w-3/5">
                         <h2 class="text-[32px] text-[#223F3C] pb-2 leading-10">Subscibe to
                             our newsletter.</h2>
-                        <p class="text-black text-sm">Subscribe to our newsletter and be the first to know about promotions, new product launches, and decoration ideas.</p>
+                        <p class="text-black text-sm">Subscribe to our newsletter and be the first to know about
+                            promotions, new product launches, and decoration ideas.</p>
                     </div>
                     <img src="images/mail.svg" alt="">
                 </div>
                 <div class="right-subscriber w-full md:w-1/2 flex justify-end">
                     <form action="" class="w-full lg:w-4/6">
-                            <div class="relative">
-                                <input type="email" name="" id="" placeholder="Enter your email address"
-                                class="my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-black text-sm">
+                        <div class="relative">
+                            <input type="email" name="" id="" placeholder="Enter your email address"
+                                class="my-7 py-4 w-full border-0 border-b-2 border-[#707070] border-opacity-15 bg-transparent placeholder:text-black text-sm">
 
-                                <div class="absolute right-0 bottom-12">
-                                    <button class="bg-black px-2 py-1 rounded-full"> <img src="images/chevron-right-w.svg" alt="" class="w-3 h-3 "></button>
-                                </div>
+                            <div class="absolute right-0 bottom-12">
+                                <button class="bg-black px-2 py-1 rounded-full"> <img src="images/chevron-right-w.svg"
+                                        alt="" class="w-3 h-3 "></button>
                             </div>
+                        </div>
                         <label class="flex items-center space-x-2">
                             <input type="checkbox" class="accent-[#7c7761]">
                             <span>I agree to terms and services.</span>
@@ -419,7 +421,7 @@
                         <form action="">
                             <div class="relative">
                                 <input type="email" name="" id="" placeholder="Enter your email address"
-                                class="relative my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext focus:outline-none"> 
+                                    class="relative my-7 py-4 w-full border-0 border-b-2 border-footertext bg-transparent placeholder:text-footertext focus:outline-none">
                                 <div class=" absolute right-0 bottom-12">
                                     <img src="images/chevron-right-w.svg" alt="" class="w-3 h-3 ">
                                 </div>
@@ -430,7 +432,8 @@
                                 <span>I agree to terms and services.</span>
                             </label>
                         </form>
-                        <div class="info flex flex-col justify-start lg:flex-row gap-5 item-start lg:items-center my-10">
+                        <div
+                            class="info flex flex-col justify-start lg:flex-row gap-5 item-start lg:items-center my-10">
                             <p class="border border-footertext rounded-full py-2 px-4">+423 873 90 12</p>
                             <p class="border border-footertext rounded-full py-2 px-4">info@swiss.com</p>
                         </div>
@@ -463,18 +466,19 @@
             </div>
             <hr class="border-footertext">
             <div class="footer-secondary flex flex-col md:flex-row justify-between items-center">
-                <div class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] border-r-0 md:border-r border-r-footertext p-8 md:p-11">
+                <div
+                    class="footer-language flex justify-start space-x-2 items-center text-[#fffaf4] border-r-0 md:border-r border-r-footertext p-8 md:p-11">
                     <img src="images/internet.svg" alt="">
                     <p>English </p>
 
-                    <select name="currency" id="" class="bg-[#7c7761] rounded-3xl p-1 focus-outline:none text-[11px] text-[#fffaf4]">
+                    <select name="currency" id=""
+                        class="bg-[#7c7761] rounded-3xl p-1 focus-outline:none text-[11px] text-[#fffaf4]">
                         <option value="" selected="">USD</option>
-                        <option value="" >Euro</option>
-                        <option value="" >Taka</option>
+                        <option value="">Euro</option>
+                        <option value="">Taka</option>
                     </select>
                 </div>
-                <div
-                    class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center">
+                <div class="footer-social flex justify-end md:justify-center space-x-2 md:space-x-8 items-center">
                     <a href=""><img src="images/linkedin-1.svg" alt="" class="w-4 h-4"></a>
                     <a href=""><img src="images/twitter-1.svg" alt="" class="w-4 h-4"></a>
                     <a href=""><img src="images/instagram-2.svg" alt="" class="w-4 h-4"></a>

@@ -120,41 +120,32 @@
                 transform: translate(-50%, -50%);
             }
 
-            
-
             .right-subscriber form input[type="checkbox"] {
                 appearance: none;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-            }
-
-            .right-subscriber form input[type="checkbox"] {
+                background-color: transparent; 
+                border: 2px solid #cbcbcb; 
                 width: 16px; 
                 height: 16px; 
-                border-radius: 2px; 
-                border: 2px solid #7c7761; 
-                background-color: transparent; 
-                display: inline-block;
-                position: relative;
-                cursor: pointer;
-                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                cursor: pointer; 
+                border-radius: 1px;
             }
 
             .right-subscriber form input[type="checkbox"]:checked {
-                border-color: #7c7761; 
-                background-color: #7c7761; 
+                background-color: transparent;
+                border-color: #707070;
+                position: relative;
             }
 
             .right-subscriber form input[type="checkbox"]:checked::after {
-                content: '\2713';
-                display: block;
+                content: '';
                 position: absolute;
-                top: 0%;
-                left: 25%;
-                width: 5px; 
-                height: 5px; 
-                border-radius: 9999px;  
-                transform: translate(-50%, -50%);
+                top: 0px;
+                left: 4px;
+                width: 5px;
+                height: 11px;
+                border: solid #707070;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
             }
 
 
